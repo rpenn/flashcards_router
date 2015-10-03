@@ -1,0 +1,43 @@
+<form novalidate ng-submit="submit()" name="updateFormValidations">
+
+  <hr>
+  <!-- fields: 
+  question(string) ,
+  category(string),
+  answers([{ text(string), correct(bool) }]) -->
+  <div>
+    <label for="question">Question</label>
+    <input name="question" type="text" ng-model="formData.question" required>
+  </div>
+
+  <div>
+    <label for="category">Category</label>
+    <select name="category" ng-model="formData.category" ng-options="category as category for category in categories"></select>
+  </div>
+
+<!-- there should only be one correct answer
+40 char limit on answers
+there shoudl be at least 2 answers
+add button for options -->
+  <div>
+    <label>Answers <button type="button" ng-click="addAnswer()">+</button></label>
+    <p class="error" ng-show="updateFormValidations.answer.$dirty && updateFormValidations.answer.$invalid">Answers must have length of x and y</p>
+    <div ng-repeat="answer in formData.answers">
+      <input type="checkbox" checked="{{ answer.correct }}" ng-click="selectCorrectAnswer(answer)" ng-model="answer.correct">
+      <input name="answer" ng-maxlength="40" required type="text" ng-model="answer.text">
+    </div>
+  </div>
+
+  <div>
+    <button type="submit" ng-disabled="updateFormValidations.$invalid">Add Flash Card</button>
+  </div>
+  <hr>
+</form>
+
+
+
+
+
+
+
+
