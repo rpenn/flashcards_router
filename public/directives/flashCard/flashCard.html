@@ -2,6 +2,7 @@
   class="flash-card" 
   ng-controller="FlashCardCtrl"
   border-on-hover>
+    <a ui-sref="manageCard({ _id: theCard._id })"><button>Manage Card</button></a>
     <h1>
       {{ theCard.question}}
     </h1>

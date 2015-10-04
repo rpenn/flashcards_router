@@ -11,22 +11,15 @@
 
         <nav style="margin-bottom: 50px;">
           <ul style="cursor: pointer; color: red;">
-            <li><a ui-sref="new_card">New Card</a></li>
+            <li><a ui-sref="home.newCard">New Card</a></li>
             <li><a ui-sref="score">Score</a></li>
-            <li><a ui-sref="flash_cards">Flashcards</a></li>
-<!--             <li><a ui-sref=""></a></li> -->
+            <li><a ui-sref="home">Flashcards</a></li>
           </ul>
         </nav>
 
         <ui-view></ui-view>
 
-        <div ng-controller="StatsController" id="statistics">
-            <div id="scoreboard">
-                <h3>Correct: <span>{{ scores.correct }}</span></h3>
-                <h3>Incorrect: <span>{{ scores.incorrect }}</span></h3>
-            </div>
-
-        </div>
+      </div>
 
       <script src="angular.js"></script>
       <script src="angular-ui-router.min.js"></script>

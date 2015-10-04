@@ -1,3 +1,5 @@
+<ui-view></ui-view>
+
 <div>
   <button
     ng-repeat="category in categories"
@@ -7,7 +9,6 @@
   <loader ng-hide="flashCards"></loader>
   <flash-card
     ng-repeat="flashCard in flashCards | orderBy: 'question'"
-    card="flashCard" ui-sref="manageCard({ _id: flashCard._id })"
+    card="flashCard"
   ></flash-card>
-</div>
 </div>
